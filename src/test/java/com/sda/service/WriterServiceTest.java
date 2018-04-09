@@ -20,7 +20,7 @@ public class WriterServiceTest {
         //when
         String result = writerService.write(name);
         //then
-        Assert.assertEquals("Hello, Szymon!", result);
+        Assert.assertEquals("Hello, Szymon.", result);
     }
 
     @Test
@@ -32,7 +32,19 @@ public class WriterServiceTest {
         String result = writerService.write(name);
 
         //then
-        Assert.assertEquals("Hello, my Friend!", result);
+        Assert.assertEquals("Hello, my Friend.", result);
+    }
+
+    @Test
+    public void testCapitalizeName(){
+        //given
+        String name = "SZYMON";
+
+        //when
+        String result = writerService.write(name);
+        //then
+        Assert.assertEquals("HELLO, SZYMON!", result);
+
     }
 
 }
