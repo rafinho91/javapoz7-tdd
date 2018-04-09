@@ -47,4 +47,16 @@ public class WriterServiceTest {
 
     }
 
+    @Test
+    public void testBlankName(){
+        //given
+        String name = "";
+        //when
+        String result = writerService.write(name);
+        //then
+        Assert.assertEquals("Hello, my Friend.", result);
+    }
+
+
+
 }
