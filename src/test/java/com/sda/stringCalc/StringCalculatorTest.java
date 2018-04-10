@@ -40,4 +40,34 @@ public class StringCalculatorTest {
         Assert.assertEquals(0,result);
     }
 
+    @Test
+    public void TestSingleNumber() {
+        //given
+        String value = "5";
+        //when
+        int result = stringCalculator.add(value);
+        //then
+        Assert.assertEquals(5, result);
+    }
+
+    @Test
+    public void testMultipleNumbers(){
+        //given
+        String value = "1;2;3;4;5;6";
+        //when
+        int result = stringCalculator.add(value);
+        //then
+        Assert.assertEquals(21,result);
+    }
+
+    @Test
+    public void testWhiteSpaces(){
+        //given
+        String value = "1;2; 3;4;5;\n 6 ";
+        //when
+        int result = stringCalculator.add(value);
+        //then
+        Assert.assertEquals(21,result);
+    }
+
 }

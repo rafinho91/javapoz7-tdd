@@ -8,8 +8,12 @@ public class StringCalculator {
         if (StringUtils.isBlank(numbers)) {
             return 0;
         }
+        int result = 0;
         String[] split = numbers.split(";");
-        return Integer.valueOf(split[0]) + Integer.valueOf(split[1]);
+        for (String element : split) {
+            result += Integer.valueOf(StringUtils.deleteWhitespace(element));
+        }
+        return result;
     }
 
 }
