@@ -20,4 +20,24 @@ public class StringCalculatorTest {
         Assert.assertEquals(55,stringCalculator.add("15;40"));
     }
 
+    @Test
+    public void testNull(){
+        //given
+        String value = null;
+        //when
+        int result = stringCalculator.add(value);
+        //then
+        Assert.assertEquals(0,result);
+    }
+
+    @Test
+    public void testBlank(){
+        //given
+        String value = "";
+        //when
+        int result = stringCalculator.add(value);
+        //then
+        Assert.assertEquals(0,result);
+    }
+
 }
