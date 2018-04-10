@@ -1,5 +1,6 @@
 package com.sda.service;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -57,6 +58,23 @@ public class WriterServiceTest {
         Assert.assertEquals("Hello, my Friend.", result);
     }
 
+    @Test
+    public void testManyNames(){
+        //given
+        String name = "Szymon,Anna,Jan";
+        //when
+        String result = writerService.write(name);
+        //then
+        Assert.assertEquals("Hello, Szymon, Anna and Jan.", result);
+    }
 
-
+    @Test
+    public void testUpperCaseNames() {
+        //given
+        String name = "SZYMON,ANNA,JAN";
+        //when
+        String result = writerService.write(name);
+        //then
+        Assert.assertEquals("HELLO, SZYMON, ANNA AND JAN!", result);
+    }
 }
