@@ -15,7 +15,7 @@ public class StringCalculatorSteps {
     private StringCalculator calculator = new StringCalculator();
 
     @Given("^I initialize stringCalculator$")
-    public void i_initialize_stringCalculator() throws Throwable {
+    public void i_initialize_stringCalculator(){
         this.calculator = new StringCalculator();
     }
 
